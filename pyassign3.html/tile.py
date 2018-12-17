@@ -78,14 +78,16 @@ def put():
     return
 
 
-m = int(input('输入墙高'))
-n = int(input('输入墙长'))
-a = int(input('输入砖高'))
-b = int(input('输入砖长'))
-wall = [[0 for i in range(n)] for j in range(m)]   # 建立一堵空的墙
-put()
-bg = turtle.Screen()
-bob = turtle.Turtle()
-turtle.setworldcoordinates(0, 1000, 1000, 0)
-lst = eval(input('输入你想画出的结果'))
-draw(lst)
+if __name__ == '__main__':
+    m = int(input('输入墙高'))
+    n = int(input('输入墙长'))
+    a = int(input('输入砖高'))
+    b = int(input('输入砖长'))
+    wall = [[0 for i in range(n)] for j in range(m)]   # 建立一堵空的墙
+    put()
+    bg = turtle.Screen()
+    bob = turtle.Turtle()
+    turtle.setworldcoordinates(0, 1000, 1000, 0)
+    lst = eval(input('输入你想画出的结果'))
+    draw(lst)
+    return

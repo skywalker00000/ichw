@@ -9,7 +9,6 @@ __pkuid__="1800011761"
 __email__="1800011761@pku.edu.cn"
 """
 
-
 import turtle
 
 
@@ -24,12 +23,14 @@ def draw(lst):
                 clear(i, j, a, b)
             elif lst[i][j] == 0:
                 continue
+    return
 
 
 def clear(i, j, x, y):   # 清除掉已描出轮廓的砖
     for i1 in range(y):
         for j1 in range(x):
             lst[i + i1][j + j1] = 0
+    return
 
 
 def bobgo(x, y, j, i):
@@ -44,6 +45,7 @@ def bobgo(x, y, j, i):
     bob.left(90)
     bob.fd(y * 50)
     bob.left(90)
+    return
 
 
 def can(i, j, x, y, num):
@@ -78,16 +80,21 @@ def put():
     return
 
 
-if __name__ == '__main__':
-    m = int(input('输入墙高'))
-    n = int(input('输入墙长'))
-    a = int(input('输入砖高'))
-    b = int(input('输入砖长'))
-    wall = [[0 for i in range(n)] for j in range(m)]   # 建立一堵空的墙
+def main():
     put()
-    bg = turtle.Screen()
-    bob = turtle.Turtle()
-    turtle.setworldcoordinates(0, 1000, 1000, 0)
+    global lst
     lst = eval(input('输入你想画出的结果'))
     draw(lst)
     return
+
+
+m = int(input('输入墙高'))
+n = int(input('输入墙长'))
+a = int(input('输入砖高'))
+b = int(input('输入砖长'))
+bg = turtle.Screen()
+bob = turtle.Turtle()
+turtle.setworldcoordinates(0, 1000, 1000, 0)
+wall = [[0 for i in range(n)] for j in range(m)]   # 建立一堵空的墙
+if __name__ == '__main__':
+    main()
